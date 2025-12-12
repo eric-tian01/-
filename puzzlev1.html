@@ -126,16 +126,6 @@ const REVEAL_DURATION = 1200;
 /****************************************/
 
 
-  <script>
-    /*************** 可调参数 ***************/
-    const IMAGE_SRC = "wedding.png";
-    const ROWS = 4;
-    const COLS = 4;  // ROWS * COLS = 12
-    const EDGE_JAG_FACTOR = 0.18; // 竖直曲线摆动幅度（0.05~0.25 可调）
-    const EDGE_SEGMENTS_PER_ROW = 4; // 每行里竖直边细分段数
-    const REVEAL_DURATION = 1200;    // 完成后滤镜淡出的时长（毫秒）
-    /****************************************/
-
     const canvas = document.getElementById("puzzleCanvas");
     const ctx = canvas.getContext("2d");
     const timeEl = document.getElementById("time");
