@@ -317,13 +317,19 @@
     draw();
   };
   img.onerror = () => {
-    resizeCanvas();
-    ctx.clearRect(0,0,W,H);
-    ctx.fillStyle = "rgba(229,231,235,.85)";
-    ctx.font = "14px system-ui, -apple-system, Segoe UI";
-    ctx.textAlign = "center";
-    ctx.fillText("图片加载失败：请检查 assets/images/my-photo.jpg 路径、大小写、文件名是否正确。", W/2, H/2);
-  };
+  resizeCanvas();
+  ctx.clearRect(0,0,W,H);
+  ctx.fillStyle = "rgba(229,231,235,.85)";
+  ctx.font = "14px system-ui, -apple-system, Segoe UI";
+  ctx.textAlign = "center";
+
+  const realUrl = new URL(IMAGE_URL, location.href).href;
+  console.error("IMAGE LOAD FAIL:", realUrl);
+
+  ctx.fillText("图片加载失败", W/2, H/2 - 10);
+  ctx.fillText(realUrl, W/2, H/2 + 12);
+};
+
   img.src = IMAGE_URL;
 
 })();
