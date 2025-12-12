@@ -69,55 +69,26 @@
       height: 100%;
       display: block;
     }
-    .status-row {
-      display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-      margin-top: 6px;
-      align-items: baseline;
-    }
-    .big-time {
-      font-size: 18px;
-      font-weight: 600;
-    }
-    .hint {
-      font-size: 12px;
-      opacity: 0.8;
-      text-align: center;
-      margin-top: 4px;
-      line-height: 1.5;
-    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1>你小时候那么可爱，我却来不及看见</h1>
-    <div class="subtitle">没关系，现在补票，大家帮帮我！</div>
 
-    <div class="panel">
-      <div class="info">
-        这张童年照片被撕成了 <strong>12 块不规则碎片</strong>。<br/>
-        左侧是一小叠“碎碎念”的童年，右侧是等待被拼好的画布。<br/>
-      </div>
+<div class="wrap">
+  <h1>你小时候那么可爱，我却来不及看见</h1>
+  <div class="subtitle">没关系，现在补票，大家帮帮我！</div>
 
-      <div class="puzzle-container">
-        <canvas id="puzzleCanvas"></canvas>
-      </div>
-
-      <div class="status-row">
-        <div>时间：<span id="time" class="big-time">0.00</span> 秒</div>
-        <div>已就位碎片：<span id="moves">0</span> / 12</div>
-      </div>
-      <div class="hint">
-        操作：按住碎片拖动到右侧画布，将其拼好。
-        提示：相邻碎片会无缝拼合。<br/>
-      </div>
+  <div class="panel">
+    <div class="puzzle-container">
+      <canvas id="puzzleCanvas"></canvas>
     </div>
   </div>
+</div>
 
 <script>
-/*************** 可调参数 ***************/
-const IMAGE_SRC = "./assets/images/my-photo-v1.png";  // ← 唯一改动
+/*************** 可调参数（唯一改动） ***************/
+const IMAGE_SRC = "./assets/images/my-photo-v1.png";
+/****************************************/
+
 const ROWS = 4;
 const COLS = 4;
 const EDGE_JAG_FACTOR = 0.18;
